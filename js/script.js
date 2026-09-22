@@ -11,7 +11,7 @@ const CONFIG = {
   // Düğmenin kilidinin açılacağı tarih (bu tarihe kadar tıklanamaz)
   // KENDİ TARİHİNLE DEĞİŞTİR — örnek olarak ileri bir tarih verdim,
   // aksi halde site direkt "açık" görünür.
-  unlockDate: "2026-10-02T08:06:00",
+  unlockDate: "2025-10-02T08:06:00",
 
   // Kilide kaç gün kala düğme yeşile doğru parlamaya başlasın.
   // Geçiş artık lineer değil, yumuşak (smoothstep) bir eğriyle ilerliyor.
