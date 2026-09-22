@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>i</title>
+<link rel="icon" href="imgs/favicon.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Arka planda hafif dokulu bir katman, kilitliyken siyah/gri, açıldıkça yeşile kayacak -->
+  <div id="bg-glow"></div>
+
+  <!-- ANA EKRAN: düğme + kilit + geri sayım -->
+  <main id="gate-screen">
+    <p id="gate-label"></p>
+
+    <button id="gate-button" class="gate-button locked" aria-label="Aç">
+      <svg id="lock-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="11" width="14" height="9" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M8 11V7.5C8 5.01472 10.0147 3 12.5 3C14.9853 3 17 5.01472 17 7.5V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <span id="gate-button-text">Kilitli</span>
+    </button>
+
+    <div id="countdown" class="countdown">
+      <div class="cd-unit"><span id="cd-days">00</span><label>gün</label></div>
+      <div class="cd-unit"><span id="cd-hours">00</span><label>saat</label></div>
+      <div class="cd-unit"><span id="cd-minutes">00</span><label>dakika</label></div>
+      <div class="cd-unit"><span id="cd-seconds">00</span><label>saniye</label></div>
+    </div>
+  </main>
+
+  <!-- SİNEMATİK METİN KATMANI: düğmeye basınca dolar -->
+  <section id="cinematic" class="cinematic hidden" aria-hidden="true">
+    <p id="cinematic-line" class="cinematic-line"></p>
+  </section>
+
+  <!-- DÜĞME GİDİNCE ONUN YERİNE GELEN İÇERİK -->
+  <section id="reveal" class="reveal hidden">
+
+    <!-- Geçen süre sayacı (slot / odometre tarzı) -->
+    <div id="elapsed-counter" class="elapsed-counter">
+      <div class="elapsed-row" id="elapsed-months"></div>
+      <div class="elapsed-grid">
+        <div class="elapsed-block" data-unit="weeks"><div class="digits"></div><label>hafta</label></div>
+        <div class="elapsed-block" data-unit="days"><div class="digits"></div><label>gün</label></div>
+        <div class="elapsed-block" data-unit="hours"><div class="digits"></div><label>saat</label></div>
+        <div class="elapsed-block" data-unit="minutes"><div class="digits"></div><label>dakika</label></div>
+        <div class="elapsed-block" data-unit="seconds"><div class="digits"></div><label>saniye</label></div>
+      </div>
+    </div>
+
+    <!-- Galeri -->
+    <div class="gallery" id="gallery">
+      <button class="gallery-item" data-img="imgs/img1.jpg" data-caption="Seninle ilk tanıştığımda muhtemelen “Bir hafta bile sürmez, iletişimi keser.” demiştim. Ama sen beni yanılttın, bebeğim. İyi ki de yanılttın.">
+        <img src="imgs/img1.jpg" alt="Anılar.jpg" onerror="this.parentElement.classList.add('img-missing')">
+        <span class="gallery-fallback">img1.jpg<br>ekle</span>
+      </button>
+      <button class="gallery-item" data-img="imgs/img2.jpg" data-caption="Oyunda ilk kez sarıldığımızda ekran görüntüsünü atmıştın. Oyun bile olsa, sarıldığımız an çok heyecanlanmıştım. Biliyorum ki sarılmalarımız sadece oyunda kalmayacak, ve çok daha uzun sürecek.">
+        <img src="imgs/img2.jpg" alt="Anılar.jpg" onerror="this.parentElement.classList.add('img-missing')">
+        <span class="gallery-fallback">img2.jpg<br>ekle</span>
+      </button>
+      <button class="gallery-item" data-img="imgs/img3.jpg" data-caption="Bana ilk kez “aşkım” dediğin anı da hiç unutmuyorum. Muhtemelen sen de söylerken çok utanmıştın. Ben ise birinin bana “aşkım” demesine o kadar alışık değildim ki, başta “aşkım”ı sorduğun sorudaki seçeneklerden biri olduğunu sanmıştım...">
+        <img src="imgs/img3.jpg" alt="Anılar.jpg" onerror="this.parentElement.classList.add('img-missing')">
+        <span class="gallery-fallback">img3.jpg<br>ekle</span>
+      </button>
+    </div>
+
+    <!-- Galerinin hemen altındaki metin -->
+    <div class="below-text">
+      <p>6 ay belki kısa bir süre gibi görünebilir ama sıfırdan tanışıp en uzun konuştuğum ve bu kadar deliler gibi sevdiğim tek insan sensin. <br> <br> Sana 6. ayımızda güzel çiçekler, bir sürü öpücük ve bir sürü sarılma vermek isterdim. Fakat maalesef şartlar pek el vermiyor, sen de biliyorsun yavrum. Sana çok daha güzel hediyeler vermek, çok daha güzel sürprizler yapmak istiyorum ve yapacağım da. 6. ayımızda yapamasam bile inan bana ilerde mutlaka yapacağım, <br> <br> güzelim. Seni çok seviyorum. İyi ki hayatımdasın, iyi ki tanışmışız, iyi ki de benim olmuşsun. Yoksa gerçekten çıldırırdım. <br> <br> Yukarıdaki fotoğraflar şimdilik maalesef sadece ekran görüntülerinden ibaret. Ama bu kadar uzaktayken bile seninle bu güzel anıları biriktirebildiysem, yan yana olduğumuzda çok daha güzel fotoğraflar çekeceğimize ve çok daha güzel anılar biriktireceğimize eminim. <br> <br> Prensesim, tekrardan söylemek istiyorum Seni çok seviyorum. İyi ki varsın, iyi ki benimlesin ve iyi ki bu 6 ayı seninle geçirmişim. Daha birlikte geçireceğimiz nice aylara, nice yıllara… </p>
+    </div>
+
+    <!-- Aşağı kaydırma ipucu — tıklayınca metin penceresi açılır -->
+    <button id="scroll-hint" class="scroll-hint" aria-label="Daha fazlası için aç">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 4V20M12 20L6 14M12 20L18 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+  </section>
+
+  <!-- Genel amaçlı, tek örnek olan yüzen pencereler (fotoğraf pencereleri JS ile bunun kopyalarını üretir) -->
+  <template id="photo-window-template">
+    <div class="floating-window photo-window">
+      <div class="window-titlebar" data-drag-handle>
+        <span class="window-title">anı.jpg</span>
+        <div class="window-controls">
+          <button class="win-btn win-minimize" data-action="minimize" aria-label="Küçült">–</button>
+          <button class="win-btn win-close" data-action="close" aria-label="Kapat">×</button>
+        </div>
+      </div>
+      <div class="window-body">
+        <img src="" alt="">
+      </div>
+      <div class="resize-handle" data-resize-handle></div>
+    </div>
+  </template>
+
+  <!-- .txt tarzı metin penceresi: aşağı ok ile açılır, içinde lorem ipsum + 3. tarih sayacı -->
+  <div id="note-window" class="floating-window note-window hidden">
+    <div class="window-titlebar" id="note-titlebar">
+      <span class="window-title">not.txt</span>
+      <div class="window-controls">
+        <button class="win-btn win-minimize" id="note-minimize" aria-label="Küçült">–</button>
+        <button class="win-btn win-close" id="note-close" aria-label="Kapat">×</button>
+      </div>
+    </div>
+    <div class="window-body note-body">
+      <p class="note-text">Daha fazlası maalesef yok… Ama bu sürprizin devamını sadece ben yapmayacağım. Sana hazırladığım bu sürprizi birlikte büyüteceğiz. Belki şu an sadece küçük bir başlangıç gibi görünüyor ama bundan sonrasını beraber, adım adım ve çok daha güzel anılarla dolduracağız.</p>
+      <div class="note-counter">
+        <span class="note-counter-label" id="note-counter-label">sayaç</span>
+        <div class="elapsed-grid note-counter-grid">
+          <div class="elapsed-block" data-unit="n-days"><div class="digits"></div><label>gün</label></div>
+          <div class="elapsed-block" data-unit="n-hours"><div class="digits"></div><label>saat</label></div>
+          <div class="elapsed-block" data-unit="n-minutes"><div class="digits"></div><label>dakika</label></div>
+          <div class="elapsed-block" data-unit="n-seconds"><div class="digits"></div><label>saniye</label></div>
+        </div>
+      </div>
+    </div>
+    <div class="resize-handle" id="note-resize-handle"></div>
+  </div>
+
+  <!-- MÜZİK KONTROLCÜSÜ (sürüklenebilir mini pencere) -->
+  <div id="music-widget" class="floating-window music-widget hidden">
+    <div class="window-titlebar" id="music-titlebar">
+      <span class="window-title" id="music-track-name">şarkı</span>
+      <div class="window-controls">
+        <button class="win-btn" id="music-edit" aria-label="Parçaları düzenle">✎</button>
+        <button class="win-btn win-minimize" id="music-minimize" aria-label="Küçült">–</button>
+      </div>
+    </div>
+    <div class="window-body music-body">
+      <div class="music-visual" id="music-visual">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="music-controls">
+        <button id="music-prev" class="music-btn" aria-label="Önceki">⏮</button>
+        <button id="music-toggle" class="music-btn music-btn-main" aria-label="Oynat / Duraklat">▶</button>
+        <button id="music-next" class="music-btn" aria-label="Sonraki">⏭</button>
+      </div>
+      <div class="music-progress">
+        <input type="range" id="music-seek" min="0" max="100" value="0" step="0.1">
+      </div>
+    </div>
+
+    <!-- parça düzenleme paneli -->
+    <div id="music-editor" class="music-editor hidden">
+      <div class="music-editor-list" id="music-editor-list"></div>
+      <button id="music-editor-add" class="music-editor-add">+ parça ekle</button>
+      <div class="music-editor-actions">
+        <button id="music-editor-save" class="music-editor-save">Kaydet</button>
+        <button id="music-editor-cancel" class="music-editor-cancel">Vazgeç</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Küçültülünce görünen minik müzik ikonu -->
+  <button id="music-bubble" class="music-bubble hidden" aria-label="Müzik kontrolcüsünü aç">♪</button>
+
+  <!-- imleci takip eden tek, ortak galeri tooltip'i -->
+  <div id="hover-tooltip" class="hover-note"></div>
+
+  <audio id="audio-player" preload="auto"></audio>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
