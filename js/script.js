@@ -11,7 +11,7 @@ const CONFIG = {
   // Düğmenin kilidinin açılacağı tarih (bu tarihe kadar tıklanamaz)
   // KENDİ TARİHİNLE DEĞİŞTİR — örnek olarak ileri bir tarih verdim,
   // aksi halde site direkt "açık" görünür.
-  unlockDate: "2026-10-02T08:06:00",
+  unlockDate: "2025-10-02T08:06:00",
 
   // Kilide kaç gün kala düğme yeşile doğru parlamaya başlasın.
   // Geçiş artık lineer değil, yumuşak (smoothstep) bir eğriyle ilerliyor.
@@ -20,9 +20,9 @@ const CONFIG = {
   // Düğmeye basılınca sırayla ekrana gelecek cinematik metinler
   cinematicLines: [
     "Tam 6 ay",
-    "Guzelligin, zekan, gulusun, bakislarin, gozlerin, saclarin, dudaklarin, sesin, konusma seklin, mimiklerin, tatliligin, sefkatin, anlayisin, sabrin, karakterin, kisiligin, dusuncelerin, olaylara bakis acin, espri anlayisin, bana karsi davranislarin, beni dinleyisin, beni anlayisin, kucuk seyleri bile hatirlaman, beni mutlu etmek icin yaptigin seyler, sesini duydugumda hissettirdiklerin, mesajlarini gordugumde yuzumde olusan gulumseme, benimle konusurkenki halin, utandigin anlar, heyecanlandigin anlar, kızman, naz yapman, triplerin, tatli kiskancliklarin, bana 'askim' diyişin, bana verdigin deger, bana hissettirdigin guven, yanımda olmasan bile kendimi sana yakin hissettirebilmen, en siradan konusmayi bile benim icin ozel hale getirmen, beni oldugum gibi kabul etmen, hayatima kattigin mutluluk, varligin",
-    "Kısacası her şeylinle",
-    "Tam 6 aydır beni büyülüyosun"
+    "Hayatımı 6 aydır güzelleştiriyosun",
+    "Kişiliğinle güzelliğinle yani her şeyinle",
+    "Tam 6 aydır beni büyülüyosun sevgilim"
   ],
 
   // Her satırın ekranda kalma süresi (ms)
@@ -34,8 +34,10 @@ const CONFIG = {
   // yaptığın değişiklikler tarayıcıda saklanır.
   musicFiles: [
     { path: "musics/mus1.mp3", title: "if not for you, hell would be knockin' on my door" },
-    { path: "musics/mus2.mp3", title: "you... all i ever wanted is you, my love" },
-    { path: "musics/mus3.mp3", title: "i see your face when i close my eyes" }
+    { path: "musics/mus2.mp3", title: "you're just to good to be true" },
+    { path: "musics/mus3.mp3", title: "i just wanna be yours" },
+    { path: "musics/mus4.mp3", title: "dance me to the end of love" },
+    { path: "musics/mus5.mp3", title: "bonus" }
   ],
 
   // 3. tarih — not penceresindeki sayaç bunu baz alır.
@@ -650,7 +652,7 @@ function tickThirdDate() {
   updateDigitRoller(noteBlocks.seconds, pad(seconds));
 }
 
-const titles = ["i","i love","i love you","i love you baby","💚love you baby","💚💚you baby","💚💚💚baby","💚💚💚💚"];
+const titles = ["i","i love","i love you","i love you baby"];
 let i = 0;
 
 setInterval(() => {
