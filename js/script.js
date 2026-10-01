@@ -19,10 +19,10 @@ const CONFIG = {
 
   // Düğmeye basılınca sırayla ekrana gelecek cinematik metinler
   cinematicLines: [
-    "Tam 6 ay",
-    "Hayatımı 6 aydır güzelleştiriyosun",
-    "Kişiliğinle güzelliğinle yani her şeyinle",
-    "Tam 6 aydır beni büyülüyosun sevgilim"
+    "Merhaba sevgilim",
+    "Hayatım uzun süre sonra",
+    "sayende çok güzel",
+    "tam 6 aydır yani"
   ],
 
   // Her satırın ekranda kalma süresi (ms)
